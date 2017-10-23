@@ -2,6 +2,16 @@
 
 <h1>Sections</h1>
 
+<%= form_tag(sections_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Section #" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% if @courses.blank? %>
+  <h4>There are no sections containing the number <%= params[:search] %>.</h4>
+<% end %>
+<br>
+
 <table>
   <thead>
     <tr>

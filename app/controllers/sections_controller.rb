@@ -5,6 +5,10 @@ class SectionsController < ApplicationController
   # GET /sections.json
   def index
     @sections = Section.all
+	
+	if params[:search]
+      @sections = Section.search(params[:search]).order("created_at DESC")
+    end
   end
 
   # GET /sections/1

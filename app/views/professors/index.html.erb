@@ -2,6 +2,15 @@
 
 <h1>Professors</h1>
 
+<%= form_tag(professors_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Professors" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% if @professors.blank? %>
+  <h4>There are no professors with names containing the characters <%= params[:search] %>.</h4>
+<% end %>
+<br>
 <table>
   <thead>
     <tr>
