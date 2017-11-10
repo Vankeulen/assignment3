@@ -1,5 +1,6 @@
 class Professor < ApplicationRecord
   has_many :sections
+  has_many :students
   
   validates_presence_of :name
   validates_uniqueness_of :name
