@@ -4,6 +4,18 @@
   <strong>Name:</strong>
   <%= @professor.name %>
 </p>
+<p>
+  <% @professor.sections.each do |section| %>
+    <br>
+    <%= "Section: " + section.number.to_s %>
+    <% end %>
+</p>
+<p>
+  <% @professor.sections.enrollments.each do |enrollments| %>
+    <br>
+    <%= "Student: " + enrollments.number.to_s %>
+    <% end %>
+</p>
 
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
 <%= link_to 'Back', professors_path %>

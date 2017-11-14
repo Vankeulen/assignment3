@@ -5,6 +5,7 @@ class EnrollmentsController < ApplicationController
   # GET /enrollments.json
   def index
     @enrollments = Enrollment.all
+    
     if params[:search]
       @enrollments = Enrollment.search(params[:search])
     end
