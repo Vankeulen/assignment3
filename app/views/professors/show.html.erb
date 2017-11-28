@@ -9,7 +9,7 @@
     <br>
     <%= "Section: " + section.number.to_s %>
     <% section.enrollments.each do |enrollment| %>
-      <%= "Student: " + enrollment.number.to_s %><br>
+      <%= "Student: " + enrollment.student.name %><br>
     <% end %>
   <% end %>
 </p>
