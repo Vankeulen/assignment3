@@ -1,7 +1,8 @@
 class Section < ApplicationRecord
   belongs_to :professor
   belongs_to :course
-  
+  has_many   :enrollments
+
   validates_presence_of :number
   validates_uniqueness_of :number, :scope => :course_id
   

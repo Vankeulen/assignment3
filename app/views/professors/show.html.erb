@@ -8,13 +8,10 @@
   <% @professor.sections.each do |section| %>
     <br>
     <%= "Section: " + section.number.to_s %>
+    <% section.enrollments.each do |enrollment| %>
+      <%= "Student: " + enrollment.number.to_s %><br>
     <% end %>
-</p>
-<p>
-  <% @professor.sections.enrollments.each do |enrollments| %>
-    <br>
-    <%= "Student: " + enrollments.number.to_s %>
-    <% end %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_professor_path(@professor) %> |

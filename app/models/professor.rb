@@ -1,7 +1,7 @@
 class Professor < ApplicationRecord
   has_many :sections
   has_many :enrollments, :through => :sections
-  has_many :students, :through => :enrollments
+  has_many :students, through: :enrollments
   
   validates_presence_of :name
   validates_uniqueness_of :name

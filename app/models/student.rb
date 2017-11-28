@@ -1,7 +1,7 @@
 class Student < ApplicationRecord
-    has_many :enrollmets
-    has_many :sections, through => :enrollmets
-    has_many :professors, through => sections
+    has_many :enrollments
+    has_many :sections, through: :enrollments
+    has_many :professors, through: :sections
 
     validates_presence_of :name
     validates_uniqueness_of :name
