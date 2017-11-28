@@ -4,6 +4,15 @@
   <strong>Name:</strong>
   <%= @student.name %>
 </p>
+<p>
+  <% @student.sections.each do |section| %>
+    <br>
+    <%= "Section: " + section.number.to_s %>
+    <% section.enrollments.each do |enrollment| %>
+      <%= "Professor: " + enrollment.number.to_s %><br>
+  <% end %>
+<% end %>
+</p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
